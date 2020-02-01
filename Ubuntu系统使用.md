@@ -69,15 +69,17 @@ deb-src http://mirrors.aliyun.com/ubuntu/ disco-proposed main restricted univers
   - cd.. 切换到上级目录
   - cd - 可以在最近两次工作目录中切换
 - **touch** 创建文件或修改文件时间，如果文件不存在，则创建一个空白文件；如果文件存在，则修改文件的末次修改日期
-- **mkdir**  创建一个新的目录。-p 参数可以递归创建目录。注意：新建目录的名称不能与当前目录中已有的目录和文件同名，也就是说文件和目录的名称是不能相同的。
+- **mkdir**  创建一个新的目录。-p 参数可以递归创建目录(mkdir -p test/test)。注意：新建目录的名称不能与当前目录中已有的目录和文件同名，也就是说文件和目录的名称是不能相同的。
 - **rm**   删除文件或目录。这个命令要注意，文件删除后不能恢复。
   - rm -f 强制删除，忽略不存在的文件，不进行提示
+  - rm -i 删除前进行提示
   - **rm -r** 递归删除目录下的内容，删除文件夹时必须加这个参数。
+- rmdir 删除目录，很少使用
 - **cp** 复制文件或则目录。格式：cp 源文件 目标文件。
   - cp -i** 覆盖文件前提示，一般应加这个参数
   - **cp -r**  若给出的源文件是目录，则cp将递归复制到该目录下的所有子目录和文件，目标文件必须为一个目录名
 - **mv**  移动或重命名。格式：mv 源文件/目录 目标文件/目录
-  - mv  -i  覆盖文件前提示
+  - mv  -i  覆盖文件前有提示
 - cat、more、grep    查看文件内容
 - **cat**   用来查看文件内容、创建文件、文件合并、追加文件内容等。cat会一次性显示所有内容，适合较少内容的文件。
   - cat -b 对非空输出行编号
@@ -99,6 +101,7 @@ deb-src http://mirrors.aliyun.com/ubuntu/ disco-proposed main restricted univers
   - echo 可以直接创建文件并同时写入内容。如 echo helloworld > test.txt
   - 重定向> 和>>。>表示将本应在终端上显示的内容重定向到一个文件，会覆盖原来的内容，>> 则表示追加，不覆盖原来内容。
   - 管道 | :将一个命令的输出可以通过管道作为另一个命令的输入，常用的管道命令有：more、grep。如： ls -ahl | more。
+- <输入重定向：从文件中输入到屏幕中，如cat < test.txt
 
 ## 远程管理常用命令
 
@@ -230,6 +233,8 @@ groupdel 组名   删除组
 cat /etc/group  确认组信息，组信息就保存在这个文件中
 
 **chgrp -R** 组名 文件/文件夹     递归修改文件/目录的所属组
+
+chmod g+rwx 文件   设置访问权限
 
 **chown -R** 用户 文件/目录   递归修改文件或目录的拥有者
 
@@ -432,3 +437,40 @@ apt是advanced packaging tool，是Linux下的一款安装包管理工具，可�
 **sudo apt remove 软件名**  卸载软件
 
 **sudo apt upgrade**  更新已安装的包
+
+## super键
+
+一般用于Ctrl和Alt键之间，单按可以调出所有活动窗口并搜索软件等
+
+### 如何更改默认打开方式？
+
+右键单击文件，找到属性－打开方式，然后爱怎么做就怎么做。
+
+### 如何查看我的系统版本？
+
+lsb_release -a
+
+## 磁盘管理
+
+- 挂载光盘
+
+1.首先创建一个挂载点，即目录，如sudo mkdir /mnt/mycdrom
+
+2.用mount命令挂载。sudo *mount /dev/cdrom*   /mnt/mycdrom,挂载后就可以使用了；
+
+3.用umount。如：sudo umount /dev/cdrom
+
+- 查看系统加载的硬盘信息
+  - cat -n /etc/fstab
+  - df 查看文件挂载信息
+
+### vim使用技巧
+
+https://youmeek.gitbooks.io/linux-tutorial/content/markdown-file/Vim-Install-And-Settings.html
+
+https://coolshell.cn/articles/5426.html
+
+- 在只记得部分命令关键字的场合，我们可通过man -k来搜索；
+- 需要知道某个命令的简要说明，可以使用whatis；而更详细的介绍，则可用info命令；
+- 查看命令在哪个位置，我们需要使用which；
+- 而对于命令的具体参数及使用方法，我们需要用到强大的man；
