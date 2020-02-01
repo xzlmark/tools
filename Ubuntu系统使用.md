@@ -149,7 +149,7 @@ ssh 客户端连接服务器的方式：**ssh [-p port] user@remote**，（port�
 
 **注意**：这种配置不是双向的，是单向的，也就是说客户机配置后，如果服务器端连接客户机，则需要按照上述步骤重新配置。
 
-![](C:/Users/Administrator/iCloudDrive/python/image/%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E5%8E%9F%E7%90%86.png)
+![](./image/%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E5%8E%9F%E7%90%86.png)
 
 - **配置远程计算机别名**。每次都输入ssh -p port user@remote，时间久了会觉得麻烦，特别是当user、remote、port都等输入，而且还不好记忆，而配置别名可以让我们经一步偷懒，譬如使用：ssh myserver来替代上面一长串。
 
@@ -289,7 +289,7 @@ usermod -s /bin/**bash** 用户名
 
 - bin和sbin
 
-在Linux中，绝大多数可执行文件都是保存在/bin、/sbin、/usr/bin、/user/sbin目录中。
+在Linux中，绝大多数可执行文件都是保存在/bin、/sbin、/usr/bin、/usr/sbin目录中。
 
 ​	**-bin**   是二进制执行文件目录，主要用于具体应用
 
@@ -335,7 +335,7 @@ x	1
 
 - 磁盘信息，-h是以人性化的方式显示大小
 
-  **df -h**        disk freee 显示磁盘剩余空间,重点查看根目录的情况
+  **df -h**        disk free 显示磁盘剩余空间,重点查看根目录的情况
 
   **du -h [目录名]**     disk usage 显示目录下的文件大小
 
