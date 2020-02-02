@@ -474,3 +474,9 @@ https://coolshell.cn/articles/5426.html
 - 需要知道某个命令的简要说明，可以使用whatis；而更详细的介绍，则可用info命令；
 - 查看命令在哪个位置，我们需要使用which；
 - 而对于命令的具体参数及使用方法，我们需要用到强大的man；
+
+### 用命令行删除回收站
+
+```
+sudo rm -rf ~/.local/share/Trash/*
+```
