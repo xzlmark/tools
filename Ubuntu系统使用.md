@@ -461,8 +461,15 @@ lsb_release -a
 3.用umount。如：sudo umount /dev/cdrom
 
 - 查看系统加载的硬盘信息
-  - cat -n /etc/fstab
+  - cat -n /etc/fstab   查看Linux系统的硬盘
   - df 查看文件挂载信息
+  - sudo fdisk -lu  查看所有硬盘信息
+
+4.如何加载双系统中Windows的文件
+
+- sudo fdisk -lu  查看需要加载的盘的名称
+- 用mount命令加载 sudo *mount /dev/sda7   /mnt/mycdrom
+- 用umount卸载
 
 ### vim使用技巧
 
