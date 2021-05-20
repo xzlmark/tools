@@ -52,7 +52,21 @@
     - 如果只有系统级别的签名，就以系统级别为准
     - 二则都没有，是不允许的
 
-### 添加提高命令
+### 常用命令
 
-- git status  查看提交状态
-- 
+- 查看状态：git status  查看工作区、缓存区状态
+- 添加：git add -A/[file name]将工作区的“新建/修改”文件增加到缓存区
+- 提交：git commit -m "message" [file name] 将缓存区内容提交到本地库中
+- git push  将本地库推送到远程库，进行合并操作
+
+- 查看历史记录
+  - git log 查看历史信息，最完整形式。
+  - git log --pretty=oneline 简洁形式显示。
+  - git log --oneline 更简洁的形式。
+  - git reflog 移动到当前版本需要的**步数**
+
+- 前进后退
+
+  - 本质
+
+    
