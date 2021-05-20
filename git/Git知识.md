@@ -111,11 +111,27 @@
 
 
 
+### ssh登录
 
+- 进入当前用户的家目录 cd ~
+- 删除.ssh目录 rm -rvf .ssh
+- 运行命令生成.ssh密钥目录  ssh-keygen -t rsa -C xzlmark@126.com
+- 进入ssh目录查看文件列表
+  - cd .ssh
+  - ls -lF
+  - 查看id_rsa.pub 文件内容：cat id_rsa.pub
+  - 复制id_rsa.pub文件内容，登录GitHub，点击用户头像-settings-ssh and gpg keys
+  - new ssh key
+  - 输入复制的密钥信息
+  - 回到GitHub创建远程地址别名
 
+![](F:\python\tools\git\ssh 设置用法.png)
 
+git remote -v :查看远端地址
 
+git remote add origin_ssh XXX.git 增加远端库的别名
 
+git push origin_ssh master:推送到远端库
 
 
 
