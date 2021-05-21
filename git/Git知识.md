@@ -135,3 +135,11 @@ git push origin_ssh master:推送到远端库
 
 
 
+
+
+### HTTPS方式push本地到远端库提示输入用户名和密码解决方案
+
+注意：这里的用户名是通过git config --global user.name 设置的用户名；密码是通过下面这种方式产生的tokens，注意生成的时候需要全部选中。
+
+![](F:\python\tools\git\git本地登录时用户名和密码解决方案.png)
+
